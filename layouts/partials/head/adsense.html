@@ -1,0 +1,7 @@
+{{if hugo.IsProduction }}
+{{ with .Site.Params.adsense }}
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{.}}" crossorigin="anonymous"></script>
+
+{{ end }}
+{{ end }}

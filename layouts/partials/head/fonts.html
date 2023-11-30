@@ -1,0 +1,22 @@
+{{- $fonts :=  .Site.Data.config.fonts -}}
+
+{{ if $fonts }}
+
+{{ with $fonts.links }}
+    {{ range . }} 
+        {{- $crossorigin := default false .crossorigin -}}
+        {{ if $crossorigin }} 
+<link rel="{{ .rel }}" href="{{.href}}" crossorigin>
+        {{ else }}
+<link rel="{{ .rel }}" href="{{.href}}">
+        {{ end }}
+    {{ end }}
+{{ end }}
+
+<style>
+    body {
+        font-family: "{{$fonts.font}}";
+    }
+</style>
+
+{{ end }}

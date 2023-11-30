@@ -1,3 +1,4 @@
+{{ if not ( eq .Type "page" ) }}
 {{- $config := .Site.Params.comments -}}
 
 {{- $enabledGlobally := $config.enable -}}
@@ -35,3 +36,4 @@
 {{- end -}}
 
 {{- end -}}
+{{ end }}
